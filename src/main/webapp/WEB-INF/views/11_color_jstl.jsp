@@ -83,14 +83,12 @@
 						<li><a href="/mysite/user?a=loginform">로그인</a></li>
 						<li><a href="/mysite/user?a=joinform">회원가입</a></li>
 					</c:when>
-				</c:choose>
-				<c:choose>
-					<c:otherwise test ="!(${parma.authUser=null})">
-						<!-- 로그인 후 -->
-						<li><a href="/mysite/user?a=modifyform">회원정보수정</a></li>
-						<li><a href="/mysite/user?a=logout">로그아웃</a></li> 
-						<li> <%=authUser.getName() %>님 안녕하세요^^;</li>
-					</c:otherwise>
+				<c:otherwise test="!(${param.authUser=null }">
+					<!-- 로그인 후 -->
+					<li><a href="/mysite/user?a=modifyform">회원정보수정</a></li>
+					<li><a href="/mysite/user?a=logout">로그아웃</a></li> 
+					<li> <%=authUser.getName() %>님 안녕하세요^^;</li>
+				</c:otherwise>
 				</c:choose>
 			</ul>
 	</div>
